@@ -1,0 +1,10 @@
+<div *ngIf="!taskId">
+    <p class="alert alert-danger">there is no Id</p>
+</div>
+<div *ngIf="taskId">
+    <input class="form-control" placeholder="title" type="text" [(ngModel)]="task.title">
+    <textarea class="form-control" placeholder="task description" [(ngModel)]="task.description"></textarea>
+    <button class="btn btn-info" (click)="saveTask()">save</button>
+    <button class="btn btn-danger" [routerLink]="['/']"  (click)="deleteTask()">delete</button>
+    <button class="btn btn-danger" [routerLink]="['/']" routerLinkActive="router-link-active" >cancle</button>
+</div>
